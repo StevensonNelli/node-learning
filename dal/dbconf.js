@@ -1,0 +1,1 @@
+module.exports.connectionString = "postgres://postgres:empower@localhost:5432/node";
