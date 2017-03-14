@@ -5,7 +5,6 @@ var Util = require('../helpers/Util');
 var Models = require('../dal/models');
 
 router.get('/', function (req, res) {
-    console.log('hiiii');
     db
     .select(Tables.emp, ['id', 'name'])
     .then(function(recs){
@@ -28,7 +27,7 @@ router.post('/emp', function (req, res) {
     };
     var values = Util.extractValuesUsingModel(Tables.emp, obj);
     var query = "insert into " + Tables.emp + " (" + Object.keys(Models[Tables.emp]).join(',') + ") values (" + values.join(',') + ")";
-    console.log('POST /emp', query);
+   
     db
     .query(query)
     .then(function(recs){
